@@ -10,3 +10,10 @@ female_heights <- GaltonFamilies %>%
     ungroup() %>%     
     select(mother, childHeight) %>%     
     rename(daughter = childHeight) 
+
+# fit regression line to predict daughter's height from mother's height
+fit <- lm(daughter ~ mother, data = female_heights)
+fit
+
+# summary statistics
+summary(fit)
